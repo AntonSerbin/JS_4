@@ -129,16 +129,16 @@ var button11= document.querySelector("#button11"),
 	countRandom=0;	
 
 function random11(){
-	rand11 = Math.floor(Math.random() * 11)
+	rand11 = Math.floor(Math.random() * 11);
+	document.getElementById("hint11").innerHTML = "hint = " + rand11;
 					};
 random11();
-document.getElementById("hint11").innerHTML = "hint = " + rand11;
 
 button11.addEventListener(`click`, function() {
 	var number11 = parseInt(document.getElementById("number11").value);
-	if (countRandom<2) {document.getElementById("try11").innerHTML = "Попытка номер "+ (countRandom+1)}
+	if (countRandom<=2) {document.getElementById("try11").innerHTML = "Попытка номер "+ (countRandom+1)}
 		else {	document.getElementById("try11").innerHTML = "Кончились попытки";
-				document.getElementById("result11").innerHTML = "Не угадали! :("
+				// document.getElementById("result11").innerHTML = "Не угадали! :("
 				return};
 	if (number11==rand11) {document.getElementById("result11").innerHTML = "Угадали число! "+ rand11};			
 	if (number11<rand11) {document.getElementById("result11").innerHTML = "Загаданное число больше"};			
